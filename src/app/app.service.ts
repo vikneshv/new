@@ -4,7 +4,7 @@ import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/Rx";
 import { Post } from "./post";
-import { Con } from './con';
+import { Cons } from './cons';
 //new line1
 import 'rxjs/add/operator/map';
 import { Headers, RequestOptions } from '@angular/http';
@@ -29,7 +29,7 @@ export class AppService {
     }
 
     //post passing params  using Observable
-    addc(con: Con): Observable<Con> {
+    addc(con: Cons): Observable<Cons> {
         // let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
         //let options = new RequestOptions({ headers: headers });
         let headers = new Headers();
@@ -50,7 +50,7 @@ export class AppService {
 
         return this.http.post(this.post_url, body, { headers: headers })
             .map((response: Response) => {
-                return <Con>response.json();
+                return <Cons>response.json();
             })
             .catch(this.handleErrorObservable);
     }

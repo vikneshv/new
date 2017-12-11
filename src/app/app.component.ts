@@ -1,7 +1,7 @@
 
 //imnport 
 import { Component, OnInit } from '@angular/core';
-import { Con } from './con';
+import { Cons } from './cons';
 // mew line 1
 import { Observable } from 'rxjs';
 import { AppService } from "./app.service";
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   //post properties
   contitle: String;
   conbody: String;
-  con = new Con();
+  cons = new Cons();
 
 
 // texbox1
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
 
   //post method
   conadd(): void {
-    this.appService.addc(this.con)
+    this.appService.addc(this.cons)
       .subscribe(con => {
       this.contitle = con.title;
       this.conbody = con.body;
